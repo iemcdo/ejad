@@ -8,16 +8,20 @@
 
   btn.addEventListener("click", async () => {
     msg.textContent = "Abriendo Google...";
+  
     const redirectTo = new URL("app.html", window.location.href).toString();
-
-    console.log("SUPABASE_URL =", SUPABASE_URL);
-    console.log("redirectTo =", redirectTo);
-    
-    const { error } = await sb.auth.signInWithOAuth({
+  
+    console.log("redirectTo:", redirectTo);
+  
+    const { data, error } = await sb.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo }
     });
-
-    if (error) msg.textContent = "Error: " + error.message;
+  
+    console.log("oauth data:", data);
+    if (error) {
+      console.error(error);
+      msg.textContent = "Error: " + error.message;
+    }
   });
 })();
