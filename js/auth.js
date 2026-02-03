@@ -10,6 +10,9 @@
     msg.textContent = "Abriendo Google...";
     const redirectTo = new URL("app.html", window.location.href).toString();
 
+    console.log("SUPABASE_URL =", SUPABASE_URL);
+    console.log("redirectTo =", redirectTo);
+    
     const { error } = await sb.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo }
