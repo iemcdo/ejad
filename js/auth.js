@@ -8,7 +8,7 @@
 
   btn.addEventListener("click", async () => {
     msg.textContent = "Abriendo Google...";
-    const redirectTo = window.location.origin + "/app.html";
+    const redirectTo = new URL("app.html", window.location.href).toString();
 
     const { error } = await sb.auth.signInWithOAuth({
       provider: "google",
