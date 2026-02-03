@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d12" />
+  <link rel="stylesheet" href="./css/app.css" />
+  <title>Proyecto Ejad</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="bg">
+  <header class="topbar">
+    <div>
+      <div class="title">Proyecto Ejad</div>
+      <div id="who" class="muted small"></div>
+    </div>
+    <button id="logout" class="btn ghost">Salir</button>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <h2>Mi Grupo</h2>
+      <select id="groupSelect" class="input"></select>
+      <p class="muted small">Si sos master, vas a ver más de un grupo.</p>
+    </section>
+
+    <nav class="tabs">
+      <button class="tab active" data-view="attendance">Asistencia</button>
+      <button class="tab" data-view="reports">Reporte</button>
+      <button class="tab" data-view="events">Calendario</button>
+      <button class="tab" data-view="photos">Fotos</button>
+      <button class="tab" data-view="finance">Finanzas</button>
+    </nav>
+
+    <section id="view" class="card"></section>
+  </main>
+
+  <script src="./js/supabaseClient.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
